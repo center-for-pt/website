@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ "/assets/css/preflight.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <script src="https://kit.fontawesome.com/7e65b2817a.js" crossorigin="anonymous"></script>
@@ -39,16 +41,30 @@
         <h1 class="u-sr-only">Center for Phsyical Therapy and Sports Medicine</h1>
 
         <a href="{{ "/" | relative_url }}">
-          <img alt="Center for Phsyical Therapy and Sports Medicine" src="{{ '/assets/images/logo.jpg' | relative_url }}" />
+          <img alt="Center for Phsyical Therapy and Sports Medicine" src="{{ '/assets/images/logo-small.jpg' | relative_url }}" />
         </a>
 
         <nav>
           <ul>
-            <li><a href="{{ "/" | relative_url }}">Home</a></li>
-            <li><a href="{{ "/services.html" | relative_url }}">Services</a></li>
-            <li><a href="{{ "/resources.html" | relative_url }}">Resources</a></li>
-            <li><a href="{{ "/team.html" | relative_url }}">Team</a></li>
+            <li><a href="{{ "/" | relative_url }}">HOME</a></li>
+            <li><a href="{{ "/services.html" | relative_url }}">SERVICES</a></li>
+            <li><a href="{{ "/story.html" | relative_url }}">ABOUT US</a>
+              <ul>
+                <li><a href="{{ "/story.html" | relative_url }}">OUR STORY</a></li>
+                <li><a href="{{ "/team.html" | relative_url }}">MEET THE TEAM</a></li>
+                <li><a href="{{ "/testimonials.html" | relative_url }}">TESTIMONIALS</a></li>
+              </ul>
+            </li>
+            <li><a href="{{ "/resources.html" | relative_url }}">PATIENT INFO</a>
+              <ul>
+                <li><a href="{{ "/FAQ.html" | relative_url }}">FAQ</a></li>
+                <li><a href="{{ "/insurance.html" | relative_url }}">INSURANCE</a></li>
+                <li><a href="{{ "/forms.html" | relative_url }}">REGISTRATION FORMS</a></li>
+              </ul>
+            </li>
+            <li><a href="{{ "/contact.html" | relative_url }}">CONTACT</a></li>
           </ul>
+          </li>
         </nav>
       </div>
 
@@ -56,13 +72,16 @@
       {% if page.hero %}
       <div class="c-header__hero">
         <div class="c-header__hero__content">
+          <h1>
+            Center for Physical Therapy and Sports Medicine
+          </h1>
           <h2>
-            A family owned practice providing the Richmond Area with Physical Therapy for 20+ years.
+            Orthopedic and performance specialists
           </h2>
-          <a target="_blank" href="{{site.review}}" class="c-button c-button__secondary">Leave a Review</a>
-          <a class="c-button c-button__success" href="#visit">Get in Touch</a>
+          <a target="_blank" href="#visit" class="c-button c-button__success">GET IN TOUCH</a>
+          <a class="c-button c-button__success" href="{{site.review}}">READ THE REVIEWS</a>
         </div>
-        <img alt="background" src="{{ "/assets/images/hero.jpg" | relative_url }}" />
+        <img alt="background" src="{{ "/assets/images/homepage-hero.jpg" | relative_url }}" />
       </div>
       {% endif %}
     </header>

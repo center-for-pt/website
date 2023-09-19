@@ -4,11 +4,29 @@ title: Resources
 ---
 
 <section>
+  <h3>Patient FAQ</h3>
+
+  <ul>
+    {% for faq in site.data.faq %}
+    <li>
+      <details>
+        <summary>
+          {{ faq.q }}
+        </summary>
+
+        {{ faq.a }}
+      </details>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
   <h3>Accepted Insurances</h3>
 
   <p>We accept the following insurances for treatment. Please contact us if you have any questions.</p>
 
-  <ul>
+  <ul class="insurance-list">
     {% for insurance in site.data.insurances %}
       {% if insurance.accepted %}
         <li>
@@ -17,10 +35,10 @@ title: Resources
       {% endif %}
     {% endfor  %}
   </ul>
+  <br>
+  <p>We <strong>do not</strong> accept the follow insurances.</p>
 
-  <p>We <strong>do not</strong> accept:</p>
-
-  <ul>
+  <ul class="insurance-list">
     {% for insurance in site.data.insurances %}
       {% unless insurance.accepted %}
         <li>
@@ -43,24 +61,6 @@ title: Resources
           {{ patient_form.title }}
         </a>
       </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h3>Patient FAQ</h3>
-
-  <ul>
-    {% for faq in site.data.faq %}
-    <li>
-      <details>
-        <summary>
-          {{ faq.q }}
-        </summary>
-
-        {{ faq.a }}
-      </details>
-    </li>
     {% endfor %}
   </ul>
 </section>
